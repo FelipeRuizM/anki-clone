@@ -5,7 +5,10 @@ Firestore with offline cache), FSRS scheduling via `ts-fsrs`, PWA. Deployed to G
 
 - **Live app:** https://feliperuizm.github.io/anki-clone/
 - **Firebase project:** `kioku-f9m2x` (console: https://console.firebase.google.com/project/kioku-f9m2x)
-- **Deploy:** push to `main` → GitHub Actions → Pages. Firestore rules: `firebase deploy --only firestore`.
+- **Deploy:** `npm run deploy` (builds and publishes `dist/` to the `gh-pages` branch → Pages).
+  The gh CLI token lacks `workflow` scope, so `.github/workflows/` is gitignored; if that scope is
+  ever added (`gh auth refresh -s workflow`), the Actions workflow in the local file can replace this.
+  Firestore rules: `firebase deploy --only firestore`.
 
 ## The flashcard-generation workflow (most common request)
 

@@ -17,7 +17,7 @@ Built with React 19, TypeScript, Vite, Tailwind CSS v4, and Firebase. Hosted on 
 1. Create a Firebase project with Google authentication and Firestore, then put your web-app
    config in `src/lib/firebase.ts` and deploy `firestore.rules`.
 2. `npm install && npm run dev`
-3. To deploy: enable GitHub Pages (GitHub Actions source) — pushes to `main` auto-deploy.
+3. To deploy: `npm run deploy` publishes the build to a `gh-pages` branch for GitHub Pages.
 4. Optional CLI deck pushing: save a service-account key to `scripts/service-account.json`
    and `{ "email": "<your-app-account>" }` to `scripts/push-config.json`, then
    `npm run push -- decks/my-deck.json`.

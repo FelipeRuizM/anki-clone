@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', 'Noto Sans JP', system-ui, 'Segoe UI', sans-serif;
+  --color-accent-50: #eef2ff;
+  --color-accent-100: #e0e7ff;
+  --color-accent-200: #c7d2fe;
+  --color-accent-300: #a5b4fc;
+  --color-accent-400: #818cf8;
+  --color-accent-500: #6366f1;
+  --color-accent-600: #4f46e5;
+  --color-accent-700: #4338ca;
+  --color-accent-800: #3730a3;
+  --color-accent-900: #312e81;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+::selection {
+  @apply bg-accent-200 dark:bg-accent-700;
+}
+
+ruby rt {
+  @apply text-[0.55em] text-zinc-500 dark:text-zinc-400;
+}
+
+.card-content code {
+  @apply rounded bg-zinc-100 px-1 py-0.5 font-mono text-[0.9em] dark:bg-zinc-800;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.18s ease-out;
+}
